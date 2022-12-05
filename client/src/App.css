@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Raleway'; 
+  src: url('./assets/fonts/Raleway-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans'; 
+  src: url('./assets/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+body{
+  font-family: 'OpenSans';
+}
+h1, h2, h3, h4{
+  font-family: 'Raleway';
+}

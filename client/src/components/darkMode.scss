@@ -1,0 +1,38 @@
+.dark {
+    background-color: #14213d;
+    color: #fff;
+    nav{
+        background-color: #14213d !important;
+    }
+    .navbar-light .navbar-nav .nav-link{
+        color: rgba(252, 163, 17, 0.55);
+        &:hover{
+            color: #fca311;
+        }
+    } 
+    .navbar-light .navbar-nav .nav-link.active{
+        color: #fca311
+    } 
+    button{
+        background-color: #fca311;
+        border-radius: 0;
+        &:hover{
+            background-color: rgba(252,163,17, 0.8);
+        }
+    }
+    
+}
+.light {
+    background-color: #fff;
+    color: #000000;
+    nav{
+        background-color: #fff;
+    }
+    button{
+        border: 2px solid #fca311;
+        border-radius: 0px;
+        &:hover{
+            background-color: #fca311;
+        }
+    }
+}
