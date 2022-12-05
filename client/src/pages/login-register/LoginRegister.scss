@@ -1,0 +1,49 @@
+.registerpage{
+    height: 100vh;
+    overflow: hidden;
+    background-color: #e5e5e5;
+.container{
+    background-color: #14213d;
+   max-width: 40%;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.nav-pills .nav-link{
+    border-radius: 0;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+    color: #e5e5e5;
+    &:hover{
+        color: black;
+    }
+}
+.nav-pills .nav-link.active{
+    background-color: #fca311;
+    color: black;
+}
+input.form-control, a, p{
+    background: none;
+    color: #e5e5e5;
+    &:focus{
+        background: none;
+        color: #e5e5e5;
+    }
+    &::placeholder{
+        color: #e5e5e5;
+    }
+}
+a, p{
+    color: #e5e5e5;
+}
+.btn{
+    background-color: #fca311;
+    color: #000000  !important;
+    border: none;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: 'Raleway';
+}
+h2{
+    color: #e5e5e5;
+}
+}

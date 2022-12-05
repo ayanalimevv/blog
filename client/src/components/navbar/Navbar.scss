@@ -1,0 +1,14 @@
+
+.navbar{
+    font-family: 'Raleway';
+    text-transform: uppercase;
+}
+.navbar-brand{
+    position: fixed;
+}
+
+svg{
+    &:hover{
+       color: #fca311;
+    }
+}
