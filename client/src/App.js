@@ -1,5 +1,6 @@
 import {Routes, Route, useLocation} from "react-router-dom";
 import Home from './pages/home/Home';
+import LoginRegister from './pages/login-register/LoginRegister';
 import './App.css';
 import NavBar from './components/navbar/NavBar';
 import './components/darkMode.scss'
@@ -24,7 +25,7 @@ function App() {
     <div className={`App ${theme}`}>
       {location.pathname === "/" ? null : <NavBar toggleTheme={toggleTheme}/>}
       <Routes>
-      <Route  index exact path="/" element={<Register/>}/>
+      <Route  index exact path="/" element={<LoginRegister/>}/>
       <Route exact path="/home" element={<Home/>}/>
 
         {/* <Route path="/register">

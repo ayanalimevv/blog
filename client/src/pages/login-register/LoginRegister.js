@@ -1,5 +1,5 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import './Login-Register.scss';
+import './LoginRegister.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faKey, faLock, faPaperPlane, faUser} from '@fortawesome/free-solid-svg-icons'
 
