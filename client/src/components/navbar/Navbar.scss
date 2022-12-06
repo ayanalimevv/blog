@@ -10,5 +10,17 @@
 svg{
     &:hover{
        color: #fca311;
+       cursor: pointer;
     }
+}
+@media only screen and (max-width: 426px){
+    .navbar-brand{
+       right: 10%;
+    }
+    
+        svg{
+        position: absolute; 
+        right: 5%;
+        }
+    
 }

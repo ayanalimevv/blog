@@ -6,8 +6,8 @@ import {faKey, faLock, faPaperPlane, faUser} from '@fortawesome/free-solid-svg-i
 const Register = () => {
   
     return ( 
-      <div className="registerpage">
-    <div className="container mt-4 p-3">
+      <div className="container-fluid d-flex align-items-center registerpage">
+    <div className="container p-3">
       <ul className='nav nav-pills nav-justified mb-5' id='pills-tab' role='tablist'>
         <li className="nav-item" role="presentation">
           <button className="nav-link active" id='pills-login-tab' data-bs-toggle="pill" data-bs-target='#pills-login' 

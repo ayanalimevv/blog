@@ -2,7 +2,23 @@
 strong{
     color: #fca113;
 }
-button{
-    max-width: 40%;
+a{
+    max-width: 70%;
 }
+}
+@media only screen and (max-width: 768px){
+    .post{
+        a{
+            max-width: 60%;
+            margin-top: 5px;
+        }
+    }
+}
+@media only screen and (max-width: 320px){
+    .post{
+        a{
+            max-width: 80%;
+            margin-top: 5px;
+        }
+    }
 }
