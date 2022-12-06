@@ -10,17 +10,23 @@
             color: #fca311;
         }
     } 
-    .navbar-light .navbar-nav .nav-link.active{
+    .navbar-light .navbar-nav .nav-link.active, .navbar-brand{
         color: #fca311
     } 
-    button{
+    .btn{
         background-color: #fca311;
         border-radius: 0;
         &:hover{
             background-color: rgba(252,163,17, 0.8);
         }
     }
-    
+    #categories{    
+    #categorylist{
+        a{
+            color: white;
+        }
+    }
+}
 }
 .light {
     background-color: #fff;
@@ -28,7 +34,7 @@
     nav{
         background-color: #fff;
     }
-    button{
+    .btn{
         border: 2px solid #fca311;
         border-radius: 0px;
         &:hover{

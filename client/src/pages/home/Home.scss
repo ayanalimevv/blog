@@ -1,16 +1,25 @@
 .homepage{
     overflow: auto;
-   
-    h4{
-        border-top: 1px solid #fca113;
-        border-bottom: 1px solid #fca113;
-        text-transform: uppercase;
-        font-size: clamp(14px, 16px, 16px);
-    }
+   h1{
+    animation: fadeInUp 1s 1s backwards; 
+   } 
+   .lead{
+    animation: fadeIn 1s 2s backwards; 
+   }
+  
     button{
         text-transform: uppercase;
+        animation: fadeInUp 1s 2.5s backwards; 
     }
     .btn-lg{
         font-size: clamp(16px, 16px, 16px);
+    }
+}
+@media only screen and (max-width: 768px){
+    .homepage{
+        div.col-lg-5{
+            text-align: center;
+        }
+       
     }
 }
