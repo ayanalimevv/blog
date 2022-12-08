@@ -3,14 +3,16 @@ import Home from './pages/home/Home';
 import LoginRegister from './pages/login-register/LoginRegister';
 import './App.css';
 import NavBar from './components/navbar/NavBar';
+import Footer from './components/footer/Footer'
 import 'animate.css'
 import './components/darkMode.scss'
 import { useEffect, useState } from "react";
-import Dashboard from "./pages/dashboard/Dashboard";
+import Profile from "./pages/profile/Profile";
 import SinglePost from "./components/singlepost/SinglePost";
+import Write from "./pages/write/Write";
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const toggleTheme = () => {
     if (theme === 'light') {
     setTheme('dark');
@@ -30,8 +32,9 @@ function App() {
       <Routes>
       <Route  index exact path="/" element={<LoginRegister/>}/>
       <Route exact path="/home" element={<Home/>}/>
-      <Route exact path="/dashboard" element={<Dashboard/>}/>
+      <Route exact path="/profile" element={<Profile/>}/>
       <Route exact path="/singlepost" element={<SinglePost/>}/>
+      <Route exact path="/write" element={<Write/>}/>
 
         {/* <Route path="/register">
           {currentUser ? <Homepage /> : <Register />}
@@ -39,6 +42,8 @@ function App() {
         <Route path="/write">{currentUser ? <Write /> : <Login />}</Route>
        */}
     </Routes> 
+    {location.pathname === "/" ? null : <Footer/>}
+
     </div>   
     
   );

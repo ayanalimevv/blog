@@ -20,13 +20,23 @@
             background-color: rgba(252,163,17, 0.8);
         }
     }
-    #categories{    
-    #categorylist{
+    #footer{
+        *{
+            color: lightgrey;
+            text-decoration: none;
+        }
         a{
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    #writeblog{
+        input, textarea{
+            background: none;
             color: white;
         }
     }
-}
 }
 .light {
     background-color: #fff;
@@ -39,6 +49,19 @@
         border-radius: 0px;
         &:hover{
             background-color: #fca311;
+        }
+    }
+    #footer{
+        background-color: #e5e5e5;
+        *{
+            color: black;
+            text-decoration: none;
+        }
+        
+        a{
+            &:hover{
+                text-decoration: underline;
+            }
         }
     }
 }

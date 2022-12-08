@@ -1,0 +1,16 @@
+.singlepost{
+    
+    .content{
+       line-height: 25px;
+       &::first-letter{
+        margin-left: 25px;
+        font-size: clamp(20px, 35px, 35px);
+        padding-right: 3px;
+        font-weight: bold;
+       }
+    }
+    img{
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
