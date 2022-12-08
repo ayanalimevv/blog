@@ -1,8 +1,5 @@
 import heroimg from '../../assets/image/heroimg.png';
-import Categories from '../../components/categories/Categories';
-import Footer from '../../components/footer/Footer';
 import Posts from '../../components/posts/Posts';
-import Sidebar from '../../components/sidebar/Sidebar';
 import './Home.scss';
 const Home = () => { 
     return ( 
@@ -22,24 +19,17 @@ const Home = () => {
       </div>
     </div>
     <div className="row g-5">
-    <div className="col-lg-8 col-md-7">
+    <div className=" col-md-12 ">
     <h3 className="pb-4 mb-4 fst-italic border-bottom">
         Trending Posts
       </h3>
 {/*----POSTS----*/}
      <Posts/>
     </div>
-{/*----CATEGORIES----*/}
-  <div id="categories" className="col-lg-4 col-md-5">
-    <div className="position-sticky" style={{top: "2rem"}}>
-      <Categories/>
-    </div>
-  </div>
+
   </div>
 
   </div>
-{/*----FOOTER----*/}
-  <Footer/>
   </div>
      );
 }

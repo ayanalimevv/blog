@@ -1,8 +1,16 @@
 #sidebar{
 h4{
-    border-top: 1px solid #fca113;
-    border-bottom: 1px solid #fca113;
+    
     text-transform: uppercase;
     font-size: clamp(14px, 16px, 16px);
 }
 } 
+@media only screen and (max-width: 576px){
+    #socials{
+        justify-content: center;
+        svg{
+            padding: 5px;
+            font-size: 20px;
+        }
+    }
+}

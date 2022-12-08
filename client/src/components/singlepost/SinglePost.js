@@ -1,18 +1,29 @@
 import Sidebar from "../sidebar/Sidebar";
 
+import './SinglePost.scss'
 const SinglePost = () => {
     return ( 
-    <div className="singlepost col-xxl-8 col-lg-12 px-4 py-5">
-      <div className="row g-5 mt-4">
-        <div className="col-md-8">
+    <div className="singlepost col-lg-12 px-4 py-5">
+      <div className="row g-5 mt-4 justify-content-center">
+        <div className="col-md-11">
 
           <article className="blog-post mb-5 ">
-            <h3 className=" text-center fw-bold">
+          {/*-----BANNER----- */}
+          <img className="mb-3 w-100 img-fluid" 
+          src="https://dspncdn.com/a1/media/originals/c6/5f/d5/c65fd51537880261e148548479a9c410.jpg"/>
+
+            {/*-----TITLE----- */}
+            <h2 className=" fw-bold text-center">
               Single Post Title
-            </h3>
-            <p className="text-center mb-0">Written by: Joshua</p>
+            </h2>
+            
+            {/*-----AUTHOR----- */}
+            <p className="mb-0 text-center">Written by: Joshua</p>
+
+            {/*-----DATE----- */}
             <p className="border-bottom text-muted text-center">November 12, 2022</p>
-            <img className="mb-3 w-100" src="https://dspncdn.com/a1/media/originals/c6/82/6b/c6826b08136d0306502ca12b459bd1f7.jpg"/>
+
+            {/*-----MAIN BODY----- */}
             <div className="content">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit nunc non augue fringilla, vitae aliquam lacus rhoncus. Sed vestibulum metus sapien, nec fermentum est auctor vitae. Aliquam sagittis risus eget velit gravida, a ullamcorper felis viverra. Curabitur hendrerit consectetur metus vel aliquam. Proin molestie iaculis neque ut posuere. Phasellus ornare tortor justo, ut pretium justo aliquet non. Nunc egestas est id ipsum laoreet luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed suscipit justo sit amet tellus gravida, eget dignissim nisi auctor. Phasellus nec sagittis turpis. Vestibulum sed odio lorem.</p>
               <p>Aliquam nec maximus eros, molestie cursus tortor. Donec accumsan purus ac tortor malesuada fringilla. Integer ullamcorper commodo laoreet. Aenean auctor tincidunt mi eget tempus. Phasellus fringilla posuere viverra. Praesent at dolor eget neque dapibus mattis vel ut diam. Etiam vitae porttitor ipsum.</p>
@@ -20,8 +31,7 @@ const SinglePost = () => {
             </div>
           </article>
         </div>
-{/*----SIDEBAR----*/}
-    <Sidebar/>
+
      </div>
   </div>
      );

@@ -1,0 +1,26 @@
+.profile{
+        h3{
+            animation: fadeIn 1.5s 0.5s backwards;
+        }
+    
+}
+@media only screen and (max-width: 767px){
+   .img-thumbnail{
+    display: block;
+    width: 200px; 
+    height: 200px;
+    margin: 0 auto;
+   }
+}
+@media only screen and (max-width: 576px){
+        #statswrapper{
+            justify-content: space-evenly;
+        }
+ }
+ @media only screen and (max-width: 387px){
+    #statswrapper{
+        justify-content: center;
+        text-align: center;
+        padding: 3px;
+    }
+}
