@@ -1,24 +1,37 @@
 import Sidebar from "../sidebar/Sidebar";
+import { useLocation } from 'react-router-dom'
+import { api } from '../../axios'
+
 
 import './SinglePost.scss'
+import { useEffect } from "react";
 const SinglePost = () => {
-    return ( 
+  const location = useLocation();
+  const blogId = location.pathname.split('/')[2];
+  useEffect(() => {
+    const getBlog = async () => {
+      let res = await api.get('/blog/find/' + blogId);
+      console.log(res.data.blog);
+    }
+    getBlog()
+  })
+  return (
     <div className="singlepost col-lg-12 px-4 py-5">
       <div className="row g-5 mt-4 justify-content-center">
         <div className="col-md-11">
 
           <article className="blog-post mb-5 ">
-          {/*-----BANNER----- */}
-          <img className="mb-3 w-100 img-fluid" 
-          src="https://dspncdn.com/a1/media/originals/c6/5f/d5/c65fd51537880261e148548479a9c410.jpg"/>
+            {/*-----BANNER----- */}
+            <img className="mb-3 w-100 img-fluid"
+              src="https://dspncdn.com/a1/media/originals/c6/5f/d5/c65fd51537880261e148548479a9c410.jpg" />
 
             {/*-----TITLE----- */}
             <h2 className=" fw-bold text-center">
               Single Post Title
             </h2>
-            
+
             {/*-----AUTHOR----- */}
-            <p className="mb-0 text-center">Written by: Joshua</p>
+            <p className="mb-0 text-center">Written by: </p>
 
             {/*-----DATE----- */}
             <p className="border-bottom text-muted text-center">November 12, 2022</p>
@@ -32,9 +45,9 @@ const SinglePost = () => {
           </article>
         </div>
 
-     </div>
-  </div>
-     );
+      </div>
+    </div>
+  );
 }
- 
+
 export default SinglePost;

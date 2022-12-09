@@ -26,7 +26,7 @@ export async function getBlog(req, res, next) {
             { new: true })
         res.status(201).json({
             message: "Blog Founded Successfully",
-            newblog
+            blog: newblog
         })
     }
     catch (err) {
@@ -148,7 +148,7 @@ export async function getByAuthors(req, res, next) {
 
         res.status(201).json({
             message: "Blog Fetched Successfully",
-            blog:blog.flat()
+            blog: blog.flat()
         })
     }
     catch (err) {
