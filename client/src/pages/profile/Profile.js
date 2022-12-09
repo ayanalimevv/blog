@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Posts from "../../components/posts/Posts";
 import Sidebar from "../../components/sidebar/Sidebar";
 import 'animate.css'
 import './Profile.scss'
@@ -59,7 +58,7 @@ const Profile = () => {
         <h4 className="pb-4 mb-4 text-center border-bottom">All Blogs</h4>
         
         {/*---POSTS--- */}
-        <Posts/>
+        {/* <Posts/> */}
       </div>
       
     </div>

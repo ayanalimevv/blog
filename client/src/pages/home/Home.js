@@ -1,7 +1,27 @@
 import heroimg from '../../assets/image/heroimg.png';
-import Posts from '../../components/posts/Posts';
+import { useSelector } from 'react-redux';
+
 import './Home.scss';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { api } from '../../axios';
+import Post from '../../components/post/Post';
 const Home = () => {
+  let { user } = useSelector(state => state.user);
+
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    try {
+      const getBlogs = async () => {
+        let res = await api.get('/blog/find/all');
+        setBlogs(res.data.blogs);
+      }
+      getBlogs()
+    } catch (err) { console.log(err); }
+  }, [])
+
   return (
     <div className="homepage mt-5">
       {/* ----HERO SECTION----- */}
@@ -11,10 +31,10 @@ const Home = () => {
             <img src={heroimg} className="d-block mx-lg-auto img-fluid" width="700" height="500" loading="lazy" />
           </div>
           <div className="col-lg-5">
-            <h1 className="display-5 fw-bold lh-1 mb-3">What's your story?</h1>
+            <h1 className="display-5 fw-bold lh-1 mb-3">What's your story, {user?.username}?</h1>
             <p className="lead">Create a blog now and start writing</p>
             <div className="d-grid gap-2 d-lg-flex justify-content-lg-start justify-content-md-center">
-              <button type="button" className="btn btn-lg px-4">Start blogging</button>
+              <Link to='/write' type="button" className="btn btn-lg px-4">Start blogging</Link>
             </div>
           </div>
         </div>
@@ -24,7 +44,11 @@ const Home = () => {
               Trending Posts
             </h3>
             {/*----POSTS----*/}
-            <Posts />
+            {
+              blogs.map(e => {
+                return <Post data={e} />
+              })
+            }
           </div>
 
         </div>
@@ -35,3 +59,6 @@ const Home = () => {
 }
 
 export default Home;
+
+
+
