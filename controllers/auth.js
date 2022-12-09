@@ -8,9 +8,10 @@ export const registerUser = async (req, res, next) => {
         var hash = bcrypt.hashSync(req.body.password, salt);
         let user = new User({ ...req.body, password: hash });
         await user.save();
+        let { password, ...others } = user._doc;
         res.status(201).json({
             message: "User Created Successfully",
-            user
+            user: others
         })
     } catch (err) {
         next(err)
