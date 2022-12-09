@@ -15,7 +15,7 @@ const Write = () => {
     		        <textarea rows="10" className="form-control" name="description" placeholder="Body..." ></textarea>
     		    </div>
                 <div className="form-group mt-2 ">
-                <label for="img">Upload an image:</label>
+                <label htmlFor="img">Upload an image:</label>
     		    <input type="file" className="form-control" name="image" accept="image/*" ></input>
     		    </div>
     		

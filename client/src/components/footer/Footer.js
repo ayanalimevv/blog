@@ -97,7 +97,7 @@ const Footer = () => {
           <Link className=" btn-outline-dark btn-floating m-1">
             <FontAwesomeIcon icon={faFacebook}/>
           </Link>
-          <Link class=" btn-outline-dark btn-floating m-1"> 
+          <Link className=" btn-outline-dark btn-floating m-1"> 
             <FontAwesomeIcon icon={faGoogle}/>
           </Link>
           <Link className=" btn-outline-dark btn-floating m-1">
