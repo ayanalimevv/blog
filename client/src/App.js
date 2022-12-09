@@ -1,4 +1,4 @@
-import {Routes, Route, useLocation} from "react-router-dom";
+import { Routes, Route, useLocation, BrowserRouter } from "react-router-dom";
 import Home from './pages/home/Home';
 import LoginRegister from './pages/login-register/LoginRegister';
 import './App.css';
@@ -15,37 +15,35 @@ function App() {
   const [theme, setTheme] = useState('dark');
   const toggleTheme = () => {
     if (theme === 'light') {
-    setTheme('dark');
+      setTheme('dark');
     } else {
-    setTheme('light');
+      setTheme('light');
     }
   };
   useEffect(() => {
     document.body.className = theme;
-    }, [theme]);
-
-  const location = useLocation(); //don't display navbar in loginpage
+  }, [theme]);
 
   return (
-    <div className={`App ${theme}`}>
-      {location.pathname === "/" ? null : <NavBar toggleTheme={toggleTheme}/>}
+    <BrowserRouter className={`App ${theme}`}>
+      <NavBar toggleTheme={toggleTheme} />
       <Routes>
-      <Route  index exact path="/" element={<LoginRegister/>}/>
-      <Route exact path="/home" element={<Home/>}/>
-      <Route exact path="/profile" element={<Profile/>}/>
-      <Route exact path="/singlepost" element={<SinglePost/>}/>
-      <Route exact path="/write" element={<Write/>}/>
+        <Route index exact path="/" element={<LoginRegister />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/profile" element={<Profile />} />
+        <Route exact path="/singlepost" element={<SinglePost />} />
+        <Route exact path="/write" element={<Write />} />
 
         {/* <Route path="/register">
           {currentUser ? <Homepage /> : <Register />}
         </Route>
         <Route path="/write">{currentUser ? <Write /> : <Login />}</Route>
        */}
-    </Routes> 
-    {location.pathname === "/" ? null : <Footer/>}
+      </Routes>
+      <Footer />
 
-    </div>   
-    
+    </BrowserRouter>
+
   );
 }
 
