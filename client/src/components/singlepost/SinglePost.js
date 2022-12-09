@@ -1,20 +1,21 @@
 import Sidebar from "../sidebar/Sidebar";
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { api } from '../../axios'
 
-
 import './SinglePost.scss'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const SinglePost = () => {
+  const [blog, setBlog] = useState([]);
+
   const location = useLocation();
   const blogId = location.pathname.split('/')[2];
   useEffect(() => {
     const getBlog = async () => {
       let res = await api.get('/blog/find/' + blogId);
-      console.log(res.data.blog);
+      setBlog(res.data.blog);
     }
     getBlog()
-  })
+  }, []);
   return (
     <div className="singlepost col-lg-12 px-4 py-5">
       <div className="row g-5 mt-4 justify-content-center">
@@ -27,20 +28,18 @@ const SinglePost = () => {
 
             {/*-----TITLE----- */}
             <h2 className=" fw-bold text-center">
-              Single Post Title
+              {blog.title}
             </h2>
 
             {/*-----AUTHOR----- */}
-            <p className="mb-0 text-center">Written by: </p>
+            <p className="mb-0 text-center">Written by: <Link style={{ color: "white" }} to={`/user/${blog.authorId}`}>{blog.author}</Link></p>
 
             {/*-----DATE----- */}
-            <p className="border-bottom text-muted text-center">November 12, 2022</p>
+            <p className="border-bottom text-muted text-center">{blog.createdAt.split('-')[2].substr(0, 2)} / {blog.createdAt.split('-')[1]} / {blog.createdAt.split('-')[0]}</p>
 
             {/*-----MAIN BODY----- */}
             <div className="content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit nunc non augue fringilla, vitae aliquam lacus rhoncus. Sed vestibulum metus sapien, nec fermentum est auctor vitae. Aliquam sagittis risus eget velit gravida, a ullamcorper felis viverra. Curabitur hendrerit consectetur metus vel aliquam. Proin molestie iaculis neque ut posuere. Phasellus ornare tortor justo, ut pretium justo aliquet non. Nunc egestas est id ipsum laoreet luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed suscipit justo sit amet tellus gravida, eget dignissim nisi auctor. Phasellus nec sagittis turpis. Vestibulum sed odio lorem.</p>
-              <p>Aliquam nec maximus eros, molestie cursus tortor. Donec accumsan purus ac tortor malesuada fringilla. Integer ullamcorper commodo laoreet. Aenean auctor tincidunt mi eget tempus. Phasellus fringilla posuere viverra. Praesent at dolor eget neque dapibus mattis vel ut diam. Etiam vitae porttitor ipsum.</p>
-              <p>Proin erat tellus, tincidunt eget velit ut, euismod condimentum eros. Etiam ut libero et eros scelerisque accumsan. Curabitur egestas est ut lorem egestas accumsan. Pellentesque vitae sem tristique, eleifend mi ac, vulputate purus. Aliquam erat volutpat. Maecenas quis mollis lacus, sed malesuada dolor. Donec at tellus sed leo luctus consectetur. In molestie bibendum arcu at tincidunt. Morbi ac gravida lacus, ut tincidunt nisi. Suspendisse potenti. Nulla molestie felis arcu, et porta arcu elementum nec. Pellentesque vitae turpis quis ex hendrerit pellentesque. Etiam pharetra ac risus a volutpat. Nullam vitae rhoncus turpis. Donec efficitur felis urna, eget finibus lacus varius sed.</p>
+              {blog.desc}
             </div>
           </article>
         </div>
