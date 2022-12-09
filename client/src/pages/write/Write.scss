@@ -1,0 +1,12 @@
+#writeblog{
+    h1{
+        animation: fadeInUp 1s 0.5s backwards;
+    }
+    input, textarea, button, label{
+        animation: fadeIn 1s 1.5s backwards; 
+    }
+    #discardbtn{
+        background-color: #e5e5e5;
+        border: 1px solid #e5e5e5
+    }
+} 

@@ -1,0 +1,26 @@
+
+.navbar{
+    font-family: 'Raleway';
+    text-transform: uppercase;
+}
+.navbar-brand{
+    position: fixed;
+}
+
+svg{
+    &:hover{
+       color: #fca311;
+       cursor: pointer;
+    }
+}
+@media only screen and (max-width: 576px){
+    .navbar-brand{
+       right: 10%;
+    }
+    
+        svg{
+        position: absolute; 
+        right: 5%;
+        }
+    
+}
