@@ -68,6 +68,7 @@ const Register = () => {
           username: loginCred.name,
           password: loginCred.password
         });
+      console.log(res.data);
       dispatch(loginSuccess(res.data.user));
       navigate('/home');
     } catch (err) {

@@ -32,7 +32,7 @@ export async function loginUser(req, res, next) {
         let { password, ...others } = user._doc;
         res.cookie('access_token', token, {
             httpOnly: true
-        }).status(200).json({ message: "Logged In Successfully!", others, token })
+        }).status(200).json({ message: "Logged In Successfully!", user: others, token })
     }
     catch (err) {
         next(err);
