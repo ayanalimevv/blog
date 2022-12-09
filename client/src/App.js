@@ -31,7 +31,9 @@ function App() {
         <Route index exact path="/" element={<LoginRegister />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/profile" element={<Profile />} />
-        <Route exact path="/singlepost" element={<SinglePost />} />
+        <Route exact path='/blog'>
+          <Route path=':id' element={<SinglePost />} />
+        </Route>
         <Route exact path="/write" element={<Write />} />
 
         {/* <Route path="/register">
@@ -42,7 +44,7 @@ function App() {
       </Routes>
       <Footer />
 
-    </BrowserRouter>
+    </BrowserRouter >
 
   );
 }

@@ -143,12 +143,12 @@ export async function getByAuthors(req, res, next) {
         const blog = await Promise.all(authors.map(author => {
             return Blog.find({ author });
         }))
-
         !blog && next(createError(404, "Blog not found!"));
+
 
         res.status(201).json({
             message: "Blog Fetched Successfully",
-            blog
+            blog:blog.flat()
         })
     }
     catch (err) {
