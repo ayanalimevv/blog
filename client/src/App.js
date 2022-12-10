@@ -9,6 +9,8 @@ import './components/darkMode.scss'
 import { useEffect, useState } from "react";
 import Profile from "./pages/profile/Profile";
 import SinglePost from "./components/singlepost/SinglePost";
+import User from "./pages/User/User";
+
 import Write from "./pages/write/Write";
 
 function App() {
@@ -33,6 +35,9 @@ function App() {
         <Route exact path="/profile" element={<Profile />} />
         <Route exact path='/blog'>
           <Route path=':id' element={<SinglePost />} />
+        </Route>
+        <Route exact path='/user'>
+          <Route path=':id' element={<User />} />
         </Route>
         <Route exact path="/write" element={<Write />} />
 
