@@ -38,7 +38,7 @@ const Profile = () => {
             <a href={`mailto:${user?.email}`} className="text-muted text-center">{user?.email}</a>
 
             {/*-----STATS (likes, followers, posts)----- */}
-            <div id="statswrapper" className="d-flex px-5 justify-content-sm-center justify-content-sm-around">
+            <div id="statswrapper" className="d-flex px-5 justify-content-sm-center justify-content-sm-around mt-2">
               <div className="articles">
                 <span>{blogs.length} </span><span className="text-muted">Articles</span>
               </div>
@@ -49,7 +49,7 @@ const Profile = () => {
                 <span>{user?.followedUsers.length} </span><span className="text-muted">Followers</span>
               </div>
             </div>
-            <button className="btn mt-3 w-25 mx-auto">Follow</button>
+            <button title="Follow" className="btn mt-3 w-25 mx-auto">Follow</button>
           </div>
         </section>
         {/*----END PROFILE HEADER---- */}

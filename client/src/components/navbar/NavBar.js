@@ -46,21 +46,21 @@ const NavBar = props => {
 
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink className={`nav-link ${checkActive}`} aria-current="page" to="/home">Home</NavLink>
+              <NavLink title='Home' className={`nav-link ${checkActive}`} aria-current="page" to="/home">Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className={`nav-link ${checkActive}`} to="/write">Write</NavLink>
+              <NavLink title='Write' className={`nav-link ${checkActive}`} to="/write">Write</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className={`nav-link ${checkActive}`} to="/profile" tabIndex="-1" aria-disabled="true">Profile</NavLink>
+              <NavLink title='Profile' className={`nav-link ${checkActive}`} to="/profile" tabIndex="-1" aria-disabled="true">Profile</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink onClick={handleLogout} className={`nav-link ${checkActive}`} to="/" tabIndex="-1" aria-disabled="true">Log Out</NavLink>
+              <NavLink title='Log Out' onClick={handleLogout} className={`nav-link ${checkActive}`} to="/" tabIndex="-1" aria-disabled="true">Log Out</NavLink>
             </li>
           </ul>
         </div>
       </div>
-      <FontAwesomeIcon icon={faCircleHalfStroke} size="xl" onClick={props.toggleTheme} />
+      <FontAwesomeIcon title={`${props.theme.charAt(0).toUpperCase()+props.theme.slice(1)} Mode`} icon={faCircleHalfStroke} size="xl" onClick={props.toggleTheme} />
     </nav>) : <></>
   );
 }

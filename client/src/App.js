@@ -26,7 +26,7 @@ function App() {
 
   return (
     <BrowserRouter className={`App ${theme}`}>
-      <NavBar toggleTheme={toggleTheme} />
+      <NavBar toggleTheme={toggleTheme} theme={theme === 'dark' ? 'light' : 'dark'} />
       <Routes>
         <Route index exact path="/" element={<LoginRegister />} />
         <Route exact path="/home" element={<Home />} />
