@@ -10,11 +10,16 @@ const SinglePost = () => {
   const location = useLocation();
   const blogId = location.pathname.split('/')[2];
   useEffect(() => {
-    const getBlog = async () => {
-      let res = await api.get('/blog/find/' + blogId);
-      setBlog(res.data.blog);
+    try {
+      const getBlog = async () => {
+        let res = await api.get('/blog/find/' + blogId);
+        setBlog(res.data.blog);
+        console.log(res.data.blog);
+      }
+      getBlog()
+    } catch (err) {
+      console.log(err);
     }
-    getBlog()
   }, []);
   return (
     <div className="singlepost col-lg-12 px-4 py-5">
@@ -35,7 +40,7 @@ const SinglePost = () => {
             <p className="mb-0 text-center">Written by: <Link style={{ color: "white" }} to={`/user/${blog.authorId}`}>{blog.author}</Link></p>
 
             {/*-----DATE----- */}
-            <p className="border-bottom text-muted text-center">{blog.createdAt.split('-')[2].substr(0, 2)} / {blog.createdAt.split('-')[1]} / {blog.createdAt.split('-')[0]}</p>
+            <p className="border-bottom text-muted text-center">{blog?.createdAt?.split('-')[2].substr(0, 2)} / {blog?.createdAt?.split('-')[1]} / {blog?.createdAt?.split('-')[0]}</p>
 
             {/*-----MAIN BODY----- */}
             <div className="content">

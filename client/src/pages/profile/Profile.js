@@ -40,13 +40,13 @@ const Profile = () => {
             {/*-----STATS (likes, followers, posts)----- */}
             <div id="statswrapper" className="d-flex px-5 justify-content-sm-center justify-content-sm-around mt-2">
               <div className="articles">
-                <span>{blogs.length} </span><span className="text-muted">Articles</span>
+                <span>{blogs?.length} </span><span className="text-muted">Articles</span>
               </div>
               <div className="likes">
-                <span>{user?.followers.length} </span><span className="text-muted">Followers</span>
+                <span>{user?.followers?.length} </span><span className="text-muted">Followers</span>
               </div>
               <div className="followers">
-                <span>{user?.followedUsers.length} </span><span className="text-muted">Followers</span>
+                <span>{user?.followedUsers?.length} </span><span className="text-muted">Followers</span>
               </div>
             </div>
             <button title="Follow" className="btn mt-3 w-25 mx-auto">Follow</button>

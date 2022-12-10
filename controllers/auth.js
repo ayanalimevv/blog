@@ -8,11 +8,16 @@ export const registerUser = async (req, res, next) => {
         var hash = bcrypt.hashSync(req.body.password, salt);
         let user = new User({ ...req.body, password: hash });
         await user.save();
+
+
+        const token = jwt.sign({ id: user._id }, process.env.JWT_KEY, {
+            expiresIn: '7d'
+        });
         let { password, ...others } = user._doc;
-        res.status(201).json({
-            message: "User Created Successfully",
-            user: others
-        })
+        res.cookie('token', token, {
+            httpOnly: true
+        }).status(200).json({ message: "Logged In Successfully!", user: { ...others, token } });
+
     } catch (err) {
         next(err)
     }
@@ -31,9 +36,9 @@ export async function loginUser(req, res, next) {
             expiresIn: '7d'
         });
         let { password, ...others } = user._doc;
-        res.cookie('access_token', token, {
+        res.cookie('token', token, {
             httpOnly: true
-        }).status(200).json({ message: "Logged In Successfully!", user: others, token })
+        }).status(200).json({ message: "Logged In Successfully!", user: { ...others, token } })
     }
     catch (err) {
         next(err);

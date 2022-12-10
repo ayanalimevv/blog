@@ -8,11 +8,7 @@ import { api } from "../../axios";
 import { loginFail, loginStart, loginSuccess } from "../../redux/userSlice";
 
 const Register = () => {
-  let { user, loading } = useSelector(state => state.user);
-
-  useEffect(() => {
-    setTimeout(() => user && navigate('/home'), 2000);
-  }, []);
+  let { loading } = useSelector(state => state.user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -50,7 +46,6 @@ const Register = () => {
           email: registerCred.email,
           password: registerCred.password
         });
-      console.log(res.data);
       dispatch(loginSuccess(res.data.user));
       navigate('/home');
     } catch (err) {
