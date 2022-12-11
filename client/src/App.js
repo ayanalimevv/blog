@@ -33,19 +33,15 @@ function App() {
         <Route index exact path="/" element={<LoginRegister />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/profile" element={<Profile />} />
-        <Route exact path='/blog'>
+        {/* <Route exact path='/blog'>
           <Route path=':id' element={<SinglePost />} />
         </Route>
         <Route exact path='/user'>
           <Route path=':id' element={<User />} />
         </Route>
-        <Route exact path="/write" element={<Write />} />
+        <Route exact path="/write" element={<Write />} /> */}
 
-        {/* <Route path="/register">
-          {currentUser ? <Homepage /> : <Register />}
-        </Route>
-        <Route path="/write">{currentUser ? <Write /> : <Login />}</Route>
-       */}
+        
       </Routes>
       <Footer />
 

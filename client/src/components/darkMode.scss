@@ -3,7 +3,20 @@
     color: #fff;
     nav{
         background-color: #14213d !important;
+        .dropstart{
+            .dropdown-toggle{
+            color: white;
+            }
+        }
+        .dropdown-menu{
+            background: #14213d;
+            input{
+                background: none;
+                color: white;
+            }
+        }
     }
+
     .navbar-light .navbar-nav .nav-link{
         color: rgba(252, 163, 17, 0.55);
         &:hover{
@@ -13,6 +26,8 @@
     .navbar-light .navbar-nav .nav-link.active, .navbar-brand{
         color: #fca311
     } 
+   
+    
     .btn{
         background-color: #fca311;
         border-radius: 0;
@@ -43,7 +58,21 @@
     color: #000000;
     nav{
         background-color: #fff;
+        .dropstart{
+            .dropdown-toggle{
+            color: black;
+            } 
+        }
+        .dropdown-menu{
+            background: none;
+            border: none;
+            input{
+                background: none;
+                color: black;
+            }
+        }
     }
+    
     .btn{
         border: 2px solid #fca311;
         border-radius: 0px;
