@@ -120,7 +120,7 @@ export async function getByTags(req, res, next) {
 
 export async function getByTitle(req, res, next) {
     try {
-        const term = req.query.q;
+        const term = req.params.id;
         const blog = await Blog.find({
             $or: [{ title: { $regex: term, $options: 'i' } }, { desc: { $regex: term, $options: 'i' } }, { author: { $regex: term, $options: 'i' } }, { tags: { $regex: term, $options: 'i' } }]
         }).sort({ views: -1 });

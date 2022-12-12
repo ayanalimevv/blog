@@ -1,0 +1,28 @@
+.homepage{
+    overflow: auto;
+   h1{
+    animation: fadeInUp 1s 0.5s backwards; 
+   } 
+   .lead{
+    animation: fadeIn 1s 1.5s backwards; 
+   }
+  
+    button{
+        text-transform: uppercase;
+        animation: fadeInUp 1s 2.5s backwards; 
+    }
+    .btn-lg{
+        font-size: clamp(16px, 16px, 16px);
+    }
+    .dropdown-menu{
+        background-color: #e5e5e5;
+    }
+}
+@media only screen and (max-width: 768px){
+    .homepage{
+        div.col-lg-5{
+            text-align: center;
+        }
+       
+    }
+}

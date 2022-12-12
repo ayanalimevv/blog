@@ -8,9 +8,9 @@ const Post = ({ data }) => {
         <div className="col p-4 d-flex flex-column position-static">
 
           {/*-----POST CATEGORY----- */}
-          {data.tags.map(e => {
+          {data.tags.map((e, i) => {
             return (
-              <strong className="d-inline-block mb-2">
+              <strong key={i} className="d-inline-block mb-2">
                 {e}
               </strong>
             )
@@ -24,7 +24,7 @@ const Post = ({ data }) => {
           <div className="mb-1 text-muted">{new Date(data.createdAt).toLocaleDateString()}</div>
 
           {/*-----PREVIEW TEXT----- */}
-          <p className="card-text mb-auto">{data.desc.substr(0,150)}...</p>
+          <p className="card-text mb-auto">{data.desc.substr(0, 150)}...</p>
           <Link to={`/blog/${data._id}`} className="btn btn-sm px-4">Continue reading</Link>
         </div>
 

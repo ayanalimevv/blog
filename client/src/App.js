@@ -12,6 +12,7 @@ import SinglePost from "./components/singlepost/SinglePost";
 import User from "./pages/User/User";
 
 import Write from "./pages/write/Write";
+import SearchPage from "./pages/SearchPage/Searchpage";
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -33,6 +34,9 @@ function App() {
         <Route index exact path="/" element={<LoginRegister />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/profile" element={<Profile />} />
+        <Route exact path="/search">
+          <Route path=":id" element={<SearchPage />} ></Route>
+        </Route>
         <Route exact path='/blog'>
           <Route path=':id' element={<SinglePost />} />
         </Route>

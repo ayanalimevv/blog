@@ -1,6 +1,12 @@
 .post{
 strong{
-    color: #fca113;
+    border: 1px solid #fca113;
+    background-color: #ffbd5439;
+    color: white;
+    padding: .2rem .4rem;
+    border-radius: 10px;
+    width: fit-content;
+    font-size: .8rem;
 }
 a{
     max-width: 70%;

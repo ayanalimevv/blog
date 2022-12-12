@@ -17,7 +17,7 @@ router.route('/update/:id').put(verifyToken, updateBlog);
 // Search blogs by tags
 router.route('/tags').get(getByTags);
 // Search blogs by title
-router.route('/title').get(getByTitle);
+router.route('/title/:id').get(getByTitle);
 // Search blogs by authors
 router.route('/author').get(getByAuthors);
 // Get blogs by author id
