@@ -8,9 +8,10 @@
             color: white;
             }
         }
-        .dropdown-menu{
+        .navbar-nav{
             background: #14213d;
-            input{
+            input, span{
+                border: 1px solid #fca311;
                 background: none;
                 color: white;
             }
