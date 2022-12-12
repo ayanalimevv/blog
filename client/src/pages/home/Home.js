@@ -38,18 +38,34 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="row g-5">
-          <div className=" col-md-12 ">
-            <h3 className="pb-4 mb-4 fst-italic border-bottom">
+        <div className="row g-5 ">
+          <div className=" col-md-10 ">
+            <h3 className="pb-4 mb-3 fst-italic border-bottom">
               Trending Posts
             </h3>
+          </div>
+          <div className="col-md-2 d-flex align-items-center">
+            
+            {/*-----Filtering----- */}
+            <div class=" dropdown ">
+              <a class=" dropdown-toggle btn" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+              Filter:</a>
+              <ul class="dropdown-menu ">
+              <li><a class="dropdown-item" href="#">All</a></li>
+                <li><a class="dropdown-item" href="#">Trending</a></li>
+                <li><a class="dropdown-item" href="#">Most Recent</a></li>
+                <li><a class="dropdown-item" href="#">Author</a></li>
+                <li><a class="dropdown-item" href="#">Title</a></li>
+              </ul>
+            </div>
+          </div>
+            
             {/*----POSTS----*/}
             {
               blogs.map(e => {
                 return <Post data={e} />
               })
             }
-          </div>
 
         </div>
 

@@ -13,11 +13,17 @@ svg{
        cursor: pointer;
     }
 }
+.dropdown-menu.show{
+    width: 270px;
+}
 @media only screen and (max-width: 576px){
     .navbar-brand{
-       right: 10%;
+       right: 40%;
     }
-    
+    .dropstart{
+        position: absolute; 
+        right: 12%;
+    }
         svg{
         position: absolute; 
         right: 5%;

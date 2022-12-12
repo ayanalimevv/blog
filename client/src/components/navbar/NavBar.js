@@ -2,7 +2,7 @@ import './Navbar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
-import { faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons';
+import { faCircleHalfStroke, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { api } from '../../axios';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/userSlice';
@@ -27,7 +27,9 @@ const NavBar = props => {
 
   return (
     location.pathname != '/' ? (<nav className="navbar navbar-expand-sm fixed-top navbar-light px-4">
+      
       <div className="container-fluid ">
+        {/*---Navbar toggler icon for smaller screens---- */}
         <button
           className="navbar-toggler"
           type="button"
@@ -35,16 +37,19 @@ const NavBar = props => {
           data-bs-target="#navbarCollapse"
           aria-controls="navbarCollapse"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
+
+        {/*---Brand name or logo goes here---- */}
         <Link className={`navbar-brand ${checkActive}`} to="/home"> Logo</Link>
+
+        {/*---Main navbar---- */}
         <div
-          className="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse"
           id="navbarCollapse">
 
-          <ul className="navbar-nav">
+          <ul className="navbar-nav d-flex mx-auto">
             <li className="nav-item">
               <NavLink title='Home' className={`nav-link ${checkActive}`} aria-current="page" to="/home">Home</NavLink>
             </li>
@@ -60,6 +65,17 @@ const NavBar = props => {
           </ul>
         </div>
       </div>
+
+      {/*---Search icon---- */}
+      <div class=" dropstart me-2">
+        <a class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+          <FontAwesomeIcon icon={faSearch} size="lg"/></a>
+          <ul class="dropdown-menu ">
+            <input type="text" className="form-control " placeholder='Search'/>
+          </ul>
+      </div>
+
+      {/*---Dark mode toggler icon---- */}
       <FontAwesomeIcon title={`${props.theme.charAt(0).toUpperCase()+props.theme.slice(1)} Mode`} icon={faCircleHalfStroke} size="xl" onClick={props.toggleTheme} />
     </nav>) : <></>
   );
