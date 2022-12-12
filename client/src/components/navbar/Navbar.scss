@@ -3,9 +3,12 @@
     font-family: 'Raleway';
     text-transform: uppercase;
 }
-.navbar-brand{
-    position: fixed;
+
+
+#main-nav{
+    margin-left: 25%;
 }
+
 
 svg{
     &:hover{
@@ -13,20 +16,38 @@ svg{
        cursor: pointer;
     }
 }
-.dropdown-menu.show{
-    width: 270px;
+@media only screen and (max-width: 1441px){
+    #main-nav{
+        margin-left: 30%;
+    }
+}
+@media only screen and (max-width: 1025px){
+   #main-nav{
+    margin-left: 25%;
+   }
+    #searchbar{
+        width:auto;
+    }
+}
+@media only screen and (max-width: 935px){
+   
+    #searchbar{
+        margin-right: -3px;
+        width: 150px;
+    }
+}
+@media only screen and (max-width: 805px){
+   
+    #main-nav{
+        margin-left: 18%;
+    }
 }
 @media only screen and (max-width: 576px){
-    .navbar-brand{
-       right: 40%;
+    #main-nav{
+        margin-left: 0;
     }
-    .dropstart{
-        position: absolute; 
-        right: 12%;
+    #searchbar{
+        margin-right: 0;
+        width: 90%;
     }
-        svg{
-        position: absolute; 
-        right: 5%;
-        }
-    
 }

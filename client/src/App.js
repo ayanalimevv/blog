@@ -41,7 +41,6 @@ function App() {
         </Route>
         <Route exact path="/write" element={<Write />} />
 
-
       </Routes>
       <Footer />
 

@@ -26,6 +26,49 @@ const NavBar = props => {
   const location = useLocation();
 
   return (
+    location.pathname != '/' ? (
+    <nav className="navbar navbar-expand-sm fixed-top navbar-light px-4">
+       <div className="container-fluid">
+        <div className="navbar-header">
+    {/*---Brand name or logo goes here---- */}
+    <Link className={`navbar-brand  ${checkActive}`} to="/home"> Logo</Link>
+    </div>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+   
+    <div className=" collapse navbar-collapse" id="navbarNavDropdown">
+      <ul id="main-nav" className="navbar-nav ">
+        <li className="nav-item">
+        <NavLink title='Home' className={`nav-link ${checkActive}`} aria-current="page" to="/home">Home</NavLink>
+        </li>
+        <li className="nav-item">
+        <NavLink title='Write' className={`nav-link ${checkActive}`} to="/write">Write</NavLink>
+        </li>
+        <li className="nav-item">
+        <NavLink title='Profile' className={`nav-link ${checkActive}`} to="/profile" tabIndex="-1" aria-disabled="true">Profile</NavLink>
+        </li>
+        <li className="nav-item">
+        <NavLink title='Log Out' onClick={handleLogout} className={`nav-link ${checkActive}`} to="/" tabIndex="-1" aria-disabled="true">Log Out</NavLink>
+        </li>
+      </ul>
+      <ul className="navbar-nav ms-auto d-lg-inline-flex">
+      <li className="nav-item mx-2">
+        <FontAwesomeIcon title={`${props.theme.charAt(0).toUpperCase()+props.theme.slice(1)} Mode`} 
+      icon={faCircleHalfStroke} size="lg" onClick={props.toggleTheme} className="my-lg-2 my-2"/>
+        </li>
+        <li className="nav-item mx-2">
+        <div id="searchbar" className="input-group">
+          <input type="text" className="form-control " placeholder='Search'/>
+          <span className="input-group-text" id="basic-addon3"><FontAwesomeIcon icon={faSearch} size="md"/></span>
+          </div>       
+        </li>
+        
+       
+      </ul>
+    </div>
+  </div>
+   
     location.pathname != '/' ? (<nav className="navbar navbar-expand-sm fixed-top navbar-light px-4">
 
       <div className="container-fluid ">
@@ -77,6 +120,7 @@ const NavBar = props => {
 
       {/*---Dark mode toggler icon---- */}
       <FontAwesomeIcon title={`${props.theme.charAt(0).toUpperCase() + props.theme.slice(1)} Mode`} icon={faCircleHalfStroke} size="xl" onClick={props.toggleTheme} />
+
     </nav>) : <></>
   );
 }
