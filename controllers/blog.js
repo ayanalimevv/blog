@@ -192,3 +192,18 @@ export async function unlikeBlog(req, res, next) {
         next(err);
     }
 }
+
+export async function getBlogsbyAuthorId(req, res, next) {
+    try {
+        const blog = await Blog.find({ authorId: req.params.id });
+        !blog && next(createError(404, "Blog not found!"));
+
+        res.status(201).json({
+            message: "Blog fetched Successfully",
+            blog
+        })
+    }
+    catch (err) {
+        next(err);
+    }
+}

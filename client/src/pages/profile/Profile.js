@@ -62,7 +62,7 @@ const Profile = () => {
           <h4 className="pb-4 mb-4 text-center border-bottom">Recents Blogs</h4>
 
           {/*---POSTS--- */}
-          {blogs.slice(0, 4).map(e => <Post data={e} />)}
+          {blogs.slice(0, 4).map(e => <Post key={e._id} data={e} />)}
         </div>
 
       </div>

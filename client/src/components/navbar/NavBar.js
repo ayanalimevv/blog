@@ -27,7 +27,7 @@ const NavBar = props => {
 
   return (
     location.pathname != '/' ? (<nav className="navbar navbar-expand-sm fixed-top navbar-light px-4">
-      
+
       <div className="container-fluid ">
         {/*---Navbar toggler icon for smaller screens---- */}
         <button
@@ -67,16 +67,16 @@ const NavBar = props => {
       </div>
 
       {/*---Search icon---- */}
-      <div class=" dropstart me-2">
-        <a class=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#">
-          <FontAwesomeIcon icon={faSearch} size="lg"/></a>
-          <ul class="dropdown-menu ">
-            <input type="text" className="form-control " placeholder='Search'/>
-          </ul>
+      <div className=" dropstart me-2">
+        <a className=" dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+          <FontAwesomeIcon icon={faSearch} size="lg" /></a>
+        <ul className="dropdown-menu ">
+          <input type="text" className="form-control " placeholder='Search' />
+        </ul>
       </div>
 
       {/*---Dark mode toggler icon---- */}
-      <FontAwesomeIcon title={`${props.theme.charAt(0).toUpperCase()+props.theme.slice(1)} Mode`} icon={faCircleHalfStroke} size="xl" onClick={props.toggleTheme} />
+      <FontAwesomeIcon title={`${props.theme.charAt(0).toUpperCase() + props.theme.slice(1)} Mode`} icon={faCircleHalfStroke} size="xl" onClick={props.toggleTheme} />
     </nav>) : <></>
   );
 }
