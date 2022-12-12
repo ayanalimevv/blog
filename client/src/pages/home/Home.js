@@ -45,27 +45,25 @@ const Home = () => {
             </h3>
           </div>
           <div className="col-md-2 d-flex align-items-center">
-            
+
             {/*-----Filtering----- */}
-            <div class=" dropdown ">
+            {/* <div class=" dropdown ">
               <a class=" dropdown-toggle btn" data-bs-toggle="dropdown" aria-expanded="false" href="#">
               Filter:</a>
               <ul class="dropdown-menu ">
-              <li><a class="dropdown-item" href="#">All</a></li>
+              <li><a class="dropdown-item" href="#">Subscribed Blogs</a></li>
                 <li><a class="dropdown-item" href="#">Trending</a></li>
                 <li><a class="dropdown-item" href="#">Most Recent</a></li>
-                <li><a class="dropdown-item" href="#">Author</a></li>
-                <li><a class="dropdown-item" href="#">Title</a></li>
               </ul>
-            </div>
+            </div> */}
           </div>
-            
-            {/*----POSTS----*/}
-            {
-              blogs.map(e => {
-                return <Post data={e} />
-              })
-            }
+
+          {/*----POSTS----*/}
+          {
+            blogs.slice(0, 5).map(e => {
+              return <Post data={e} />
+            })
+          }
 
         </div>
 

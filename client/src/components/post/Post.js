@@ -21,7 +21,7 @@ const Post = ({ data }) => {
           <h3 className="mb-0">{data.title}</h3>
 
           {/*-----DATE----- */}
-          <div className="mb-1 text-muted">{data.createdAt}</div>
+          <div className="mb-1 text-muted">{new Date(data.createdAt).toLocaleDateString()}</div>
 
           {/*-----PREVIEW TEXT----- */}
           <p className="card-text mb-auto">{data.desc.substr(0,150)}...</p>

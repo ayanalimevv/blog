@@ -12,9 +12,9 @@ const Profile = () => {
   const [blogs, setBlogs] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
+  const userId = location.pathname.split('/')[2];
   useEffect(() => {
     const getUser = async () => {
-      const userId = location.pathname.split('/')[2];
       let res = await api.get('/user/find/' + userId);
       setUser(res.data.user);
     }
@@ -23,8 +23,9 @@ const Profile = () => {
 
   useEffect(() => {
     const getBlogs = async () => {
-      let res = await api.get('/blog/author?a=' + user.username);
+      let res = await api.get('/blog/author/' + userId);
       setBlogs(res.data.blog);
+      console.log(res.data);
     }
     getBlogs()
   }, [])
@@ -71,7 +72,7 @@ const Profile = () => {
           <h4 className="pb-4 mb-4 text-center border-bottom">Recents Blogs</h4>
 
           {/*---POSTS--- */}
-          {blogs.slice(0, 4).map(e => <Post data={e} />)}
+          {blogs.slice(0, 4).map(e => <Post key={e._id} data={e} />)}
         </div>
 
       </div>

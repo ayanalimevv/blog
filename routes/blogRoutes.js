@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import { deleteAllBlog, deleteBlog, getAllBlogs, getBlog, getByAuthors, getByTags, getByTitle, likeBlog, postBlog, updateBlog } from '../controllers/blog.js';
+import { deleteAllBlog, deleteBlog, getAllBlogs, getBlog, getBlogsbyAuthorId, getByAuthors, getByTags, getByTitle, likeBlog, postBlog, updateBlog } from '../controllers/blog.js';
 import { verifyToken } from '../utils/verfiyToken.js';
 // Get all blogs 
 router.route('/find/all').get(getAllBlogs)
@@ -20,6 +20,8 @@ router.route('/tags').get(getByTags);
 router.route('/title').get(getByTitle);
 // Search blogs by authors
 router.route('/author').get(getByAuthors);
+// Get blogs by author id
+router.route('/author/:id').get(getBlogsbyAuthorId);
 // Like a blog
 router.route('/like/:id').put(verifyToken,likeBlog);
 
